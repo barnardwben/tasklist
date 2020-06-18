@@ -36,6 +36,9 @@ function addTask(e) {
   li.appendChild(link);
 
   //  Append li to ul
+  taskList.appendChild(li);
+
+  
 
   e.preventDefault();
 }
