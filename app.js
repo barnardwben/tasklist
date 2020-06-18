@@ -33,7 +33,9 @@ function addTask(e) {
   // Add icon html
   link.innerHtml = '<i class="fa fa-remove"></i>';
   // Append the link to li
+  li.appendChild(link);
 
+  //  Append li to ul
 
   e.preventDefault();
 }
