@@ -30,6 +30,9 @@ function addTask(e) {
   const link = document.createElement('a');
   // Add class
   link.className = 'delete-item secondary-content';
+  // Add icon html
+  link.innerHtml = '<i class="fa fa-remove"></i>';
+  // Append the link to li
 
 
   e.preventDefault();
