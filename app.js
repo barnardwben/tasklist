@@ -10,6 +10,8 @@ loadEventListeners();
 
 // Load all event listeners
 function loadEventListeners() {
+  // DOM Load event
+  document.addEventListener('DOMContentLoaded', getTasks)
   // Add task event
   form.addEventListener('submit', addTask);
   // Remove Task event
@@ -20,6 +22,15 @@ function loadEventListeners() {
   filter.addEventListener('keyup', filterTasks);
 }
 
+// Get Tasks from LS
+function getTasks() {
+  let tasks;
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+  }
+}
 // Add Task
 function addTask(e) {
   if (taskInput.value === '') {
@@ -60,11 +71,11 @@ function storeTaskInLocalStorage(task) {
     tasks = [];
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'))
+  }
 
     tasks.push(task);
 
     localStorage.setItem('tasks', JSON.stringify(tasks))
-  }
 }
 
 // Remove Task
