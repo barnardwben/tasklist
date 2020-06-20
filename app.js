@@ -63,7 +63,7 @@ function storeTaskInLocalStorage(task) {
 
     tasks.push(task);
 
-    localStorage.setItem('tasks', JSON.stringify(t))
+    localStorage.setItem('tasks', JSON.stringify(ta))
   }
 }
 
